@@ -159,7 +159,7 @@ async function evaluate(
 						content: `<system-reminder name="${loaded.name}">\n${message}\n</system-reminder>`,
 						display: true,
 					},
-					{ deliverAs: "steer" },
+					{ deliverAs: "steer", triggerTurn: true },
 				);
 
 				loaded.lastFiredAt = loaded.evalCount;
