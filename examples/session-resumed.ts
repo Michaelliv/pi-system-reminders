@@ -2,7 +2,7 @@
  * Remind the agent when a session is resumed, as application state may have changed.
  * Mirrors Claude Code's system-reminder-session-continuation.
  */
-import type { ExtensionAPI } from "@mariozechner/pi-coding-agent";
+import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 
 export default function (pi: ExtensionAPI) {
 	let resumed = false;

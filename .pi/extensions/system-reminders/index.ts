@@ -5,7 +5,7 @@ import * as fs from "node:fs";
 import * as os from "node:os";
 import * as path from "node:path";
 import { createJiti } from "jiti";
-import type { ExtensionAPI, ExtensionContext } from "@mariozechner/pi-coding-agent";
+import type { ExtensionAPI, ExtensionContext } from "@earendil-works/pi-coding-agent";
 
 const jiti = createJiti(import.meta.url, { moduleCache: false });
 
@@ -133,7 +133,15 @@ async function evaluate(
 	ctx: ExtensionContext,
 	pi: ExtensionAPI,
 ) {
-	const branch = ctx.sessionManager.getBranch();
+	const eventReminders = reminders.filter((loaded) => loaded.events.has(event));
+	if (eventReminders.length === 0) return;
+	
+	let branch: any[];
+	try {
+		branch = ctx.sessionManager.getBranch();
+	} catch {
+	  return;
+	}
 
 	for (const loaded of reminders) {
 		if (!loaded.events.has(event)) continue;
@@ -159,7 +167,7 @@ async function evaluate(
 						content: `<system-reminder name="${loaded.name}">\n${message}\n</system-reminder>`,
 						display: true,
 					},
-					{ deliverAs: "steer" },
+					{ deliverAs: "steer", triggerTurn: true },
 				);
 
 				loaded.lastFiredAt = loaded.evalCount;

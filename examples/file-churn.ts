@@ -1,7 +1,7 @@
 /**
  * Remind the agent when it keeps editing the same file repeatedly.
  */
-import type { ExtensionAPI } from "@mariozechner/pi-coding-agent";
+import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 
 export default function (pi: ExtensionAPI) {
 	const editCounts = new Map<string, number>();

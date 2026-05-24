@@ -2,7 +2,7 @@
  * After compaction, remind the agent that file contents may have been summarized away.
  * Mirrors Claude Code's system-reminder-compact-file-reference.
  */
-import type { ExtensionAPI } from "@mariozechner/pi-coding-agent";
+import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 
 export default function (_pi: ExtensionAPI) {
 	return {

@@ -1,7 +1,7 @@
 /**
  * Remind the agent to stop and rethink after consecutive bash failures.
  */
-import type { ExtensionAPI } from "@mariozechner/pi-coding-agent";
+import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 
 export default function (pi: ExtensionAPI) {
 	let consecutiveFailures = 0;
