@@ -2,7 +2,7 @@
  * Remind the agent to use task tracking tools if they haven't been used recently.
  * Mirrors Claude Code's system-reminder-task-tools-reminder.
  */
-import type { ExtensionAPI } from "@mariozechner/pi-coding-agent";
+import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 
 export default function (pi: ExtensionAPI) {
 	let toolCallsSinceLastTask = 0;

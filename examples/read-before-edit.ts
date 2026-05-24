@@ -1,7 +1,7 @@
 /**
  * Remind the agent to read a file before editing it.
  */
-import type { ExtensionAPI } from "@mariozechner/pi-coding-agent";
+import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 
 export default function (pi: ExtensionAPI) {
 	const readFiles = new Set<string>();
